@@ -120,11 +120,14 @@ img {
   background-color: var(--color-logo-links);
   border-radius: 2px;
   color: var(--color-logo-links);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .active:hover::after {
   opacity: 1;
   background-color: var(--color-logo-links);
+}
+.active {
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-head li:not(:last-child) {
@@ -155,6 +158,19 @@ img {
   fill: currentColor;
 }
 /* общие свойства ссылок */
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  color: var(--main-color-headers);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .link:hover,
 .link:focus {
@@ -230,6 +246,9 @@ img {
   cursor: pointer;
   color: var(--title-color);
   background-color: var(--team-background-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:focus,
@@ -251,6 +270,7 @@ img {
   flex-basis: calc((100% - 90px) / 3);
   margin-left: 30px;
   margin-top: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project:hover,
 .project:focus {
@@ -462,19 +482,22 @@ img {
   justify-content: center;
   align-items: center;
   background-color: inherit;
-
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  fill: var(--company-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-link:hover,
 .team-link:focus {
   fill: #ffffff;
   background-color: var(--color-logo-links);
 }
-.team-link {
-  display: inline-flex;
-  fill: var(--company-color);
+.team-link:hover,
+.team-link:focus {
+  fill: var(--white-color);
+  background-color: var(--color-logo-links);
 }
 .team-svg {
   width: 20px;
@@ -525,19 +548,13 @@ img {
 .clients-item {
   display: flex;
   align-items: center;
-  /* border: 1px solid #afb1b8; */
   box-sizing: border-box;
-  /* border-radius: 4px;
-  width: 170px;
-  height: 92px; */
 }
 .clients-link:hover,
 .clients-link:focus {
   border: 1px solid var(--color-logo-links);
   fill: var(--color-logo-links);
   border-radius: 4px;
-  width: 170px;
-  height: 92px;
 }
 .clients-link {
   display: flex;
@@ -547,6 +564,9 @@ img {
   width: 170px;
   height: 92px;
   border: 1px solid #afb1b8;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item:not(:last-child) {
@@ -560,11 +580,6 @@ img {
   border: none;
 }
 
-.team-link:hover,
-.team-link:focus {
-  fill: var(--white-color);
-  background-color: var(--color-logo-links);
-}
 /* подвал */
 
 .footer {
@@ -612,6 +627,10 @@ img {
   letter-spacing: 0.03em;
   color: var(--white-color);
 }
+.footer .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .footer .link:hover,
 .footer .link:focus {
   color: var(--color-logo-links);
@@ -635,6 +654,8 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-svg:hover,
 .social-svg:focus {
@@ -716,6 +737,8 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close:hover,
 .modal-close:focus {
@@ -726,8 +749,8 @@ img {
   visibility: inherit;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop {
-  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
